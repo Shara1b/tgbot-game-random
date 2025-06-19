@@ -1,3 +1,4 @@
+from config import TOKEN
 import logging
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from telegram.ext import Application, CommandHandler, ContextTypes, CallbackQueryHandler
@@ -155,7 +156,7 @@ async def random_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 def main():
-    application = Application.builder().token("7646587648:AAGOjBAcA0NriLkM9VK3NarjWWKD1_bG33I").build()
+    application = Application.builder().token(TOKEN).build()
 
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CommandHandler("help", help_command))
